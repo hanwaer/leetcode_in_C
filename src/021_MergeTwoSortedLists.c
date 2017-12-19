@@ -17,6 +17,7 @@
 
 struct ListNode *getNextNode(struct ListNode **a, struct ListNode **b) {
     struct ListNode *ret;
+
     if ((*a)->val <= (*b)->val) {
         ret = *a;
         *a = ret->next;
@@ -28,27 +29,26 @@ struct ListNode *getNextNode(struct ListNode **a, struct ListNode **b) {
 }
 
 
-struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2) {
+struct ListNode* mergeTwoLists(struct ListNode *l1, struct ListNode *l2) {
     struct ListNode *head;
     struct ListNode *curr;
-    
+
     if (!l1 && !l2)
         return NULL;
     else if (!l1)
         return l2;
     else if (!l2)
         return l1;
-        
+
     head = getNextNode(&l1, &l2);
     curr = head;
-    
+
     while (l1 && l2) {
         curr->next = getNextNode(&l1, &l2);
         curr = curr->next;
     }
     if (l1) {curr->next = l1;}
     if (l2) {curr->next = l2;}
-    
 
     return head;
 } 

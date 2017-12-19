@@ -20,14 +20,6 @@ You may assume there are no cycles anywhere in the entire linked structure.
 Your code should preferably run in O(n) time and use only O(1) memory.
 */
 
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     struct ListNode *next;
- * };
- */
-
 struct ListNode *getIntersectionNode(struct ListNode *headA, struct ListNode *headB) {
 	int na = 0, nb = 0, i;
     struct ListNode *ta, *tb;
@@ -41,15 +33,15 @@ struct ListNode *getIntersectionNode(struct ListNode *headA, struct ListNode *he
     ta = headA;
     tb = headB;
     if (na > nb) {
-        for (i=0; i<na-nb; i++)
+        for (i = 0; i < na - nb; i++)
             ta = ta->next;
     } else {
-        for (i=0; i<nb-na; i++)
+        for (i = 0; i < nb - na; i++)
             tb = tb->next;
     }
 
     while (ta && tb) {
-        if (ta==tb)
+        if (ta == tb)
             return ta;
         ta = ta->next;
         tb = tb->next;

@@ -46,19 +46,20 @@ int isAnagrams(char *s, int *map, int size)
  * Return an array of size *returnSize.
  * Note: The returned array must be malloced, assume caller calls free().
  */
-int* findAnagrams(char* s, char* p, int* returnSize) {
-    size_t s_len = strlen(s);
-    size_t p_len = strlen(p);
-    int len_diff = s_len - p_len;
-    int *ret = calloc(s_len + 1, sizeof(int));
+int* findAnagrams(char *s, char *p, int *returnSize) {
+    int i, j = 0, len_diff, *ret;
     int map[128] = {0}, tmp[128] = {0};
-    int i, j = 0;
+    size_t s_len, p_len;
+
+    s_len = strlen(s);
+    p_len = strlen(p);
+    len_diff = s_len - p_len;
+    *ret = calloc(s_len + 1, sizeof(int));
 
     for (i = 0; i < p_len; i++) {
         map[p[i]]++;
     }
 
-    
     for (i = 0; i <= len_diff; i++) {
         memcpy(tmp, map, 128*sizeof(int));
         if (isAnagrams(&s[i], &tmp, p_len)) {

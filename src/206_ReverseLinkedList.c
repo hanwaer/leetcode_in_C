@@ -7,11 +7,11 @@ struct ListNode {
     struct ListNode *next;
 };
 
-struct ListNode* reverseList(struct ListNode* head) {
+struct ListNode* reverseList(struct ListNode *head) {
+    struct ListNode *p, *x, *y;
+
     if (!head)
         return NULL;
-
-    struct ListNode *p, *x, *y;
 
     x = head;
     p = NULL;

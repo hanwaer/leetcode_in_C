@@ -16,10 +16,10 @@
  */
 
 void deleteNode(struct ListNode* node) {
-    struct ListNode *n1;
+    struct ListNode *n;
 
-    n1 = node->next;
+    n = node->next;
     node->val = node->next->val;
     node->next = node->next->next;
-    free(n1);
+    free(n);
 }

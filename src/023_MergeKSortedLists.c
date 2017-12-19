@@ -30,13 +30,14 @@ struct ListNode *merge2lists(struct ListNode *l1, struct ListNode *l2) {
     return dummy.next;
 }
 
-struct ListNode* mergeKLists(struct ListNode** lists, int listsSize) {
-    if (lists==NULL || listsSize==0)
+struct ListNode* mergeKLists(struct ListNode **lists, int listsSize) {
+    int begin, end;
+    if (lists == NULL || listsSize == 0)
         return NULL;
         
-    int end = listsSize - 1;
+    end = listsSize - 1;
     while (end > 0) {
-        int begin = 0;
+        begin = 0;
         while (begin < end) {
             lists[begin] = merge2lists(lists[begin], lists[end]);
             begin++;

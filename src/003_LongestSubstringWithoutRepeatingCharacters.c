@@ -8,7 +8,7 @@
  * Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
  */
 
-int lengthOfLongestSubstring(char* s) {
+int lengthOfLongestSubstring(char *s) {
     char *l, *r;
     int max = 0;
     char *map[256] = {0};

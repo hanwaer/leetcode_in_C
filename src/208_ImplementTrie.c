@@ -26,7 +26,7 @@ struct TrieNode* trieCreate() {
 }
 
 /** Inserts a word into the trie. */
-void insert(struct TrieNode* root, char* word) {
+void insert(struct TrieNode *root, char *word) {
     int i;
     struct TrieNode *p = root;
 
@@ -40,7 +40,7 @@ void insert(struct TrieNode* root, char* word) {
 }
 
 /** Returns if the word is in the trie. */
-bool search(struct TrieNode* root, char* word) {
+bool search(struct TrieNode *root, char *word) {
     int i;
     struct TrieNode *p = root;
 

@@ -14,7 +14,7 @@
  *     struct ListNode *next;
  * };
  */
-struct ListNode* swapPairs(struct ListNode* head) {
+struct ListNode* swapPairs(struct ListNode *head) {
     struct ListNode *new_head = NULL;
     struct ListNode *p1 = head, *p2 = NULL, *temp = NULL;
     struct ListNode *last = NULL;
@@ -23,9 +23,11 @@ struct ListNode* swapPairs(struct ListNode* head) {
         return NULL;
     if (!head->next)
         return head;
+
     new_head = head->next;    
-    for (; p1 && (p2=p1->next); p1 = p1->next) {
-        if (last) last->next = p2;
+    for (; p1 && (p2 = p1->next); p1 = p1->next) {
+        if (last)
+            last->next = p2;
         temp = p2->next;
         p2->next = p1;
         p1->next = temp;
@@ -33,5 +35,4 @@ struct ListNode* swapPairs(struct ListNode* head) {
     }
 
     return new_head;
-
 }

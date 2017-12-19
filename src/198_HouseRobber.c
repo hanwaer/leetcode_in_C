@@ -11,14 +11,14 @@
  */
 
 #define max(a,b) (a) > (b) ? (a) : (b)
-int rob(int* nums, int numsSize) {
-    int a = 0, b = 0;
+int rob(int *nums, int numsSize) {
+    int i, a = 0, b = 0;
 
-    for (int i=0; i < numsSize; i++) {
-        if (i%2 == 0)
-            a = max(a+nums[i], b);
+    for (i = 0; i < numsSize; i++) {
+        if (i % 2 == 0)
+            a = max(a + nums[i], b);
         else
-            b = max(a, b+nums[i]);
+            b = max(a, b + nums[i]);
     }
 
     return max(a,b);

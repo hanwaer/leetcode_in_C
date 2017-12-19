@@ -22,10 +22,10 @@ struct TreeNode {
     struct TreeNode *right;
 };
 
-struct TreeNode* invertTree(struct TreeNode* root) {
+struct TreeNode* invertTree(struct TreeNode *root) {
     if (!root) return NULL;
 
-    struct TreeNode* tmp = root->left;
+    struct TreeNode *tmp = root->left;
 
     root->left = invertTree(root->right);
     root->right = invertTree(tmp);

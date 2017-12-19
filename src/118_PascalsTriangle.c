@@ -13,14 +13,14 @@ Return
 ]
 */
 
-int** generate(int numRows, int** columnSizes) {
+int** generate(int numRows, int **columnSizes) {
     int i, j;
     int **rr = calloc(numRows, sizeof(int*));
     int *s = calloc(numRows, sizeof(int));
 
     for (i = 0; i < numRows; i++) {
-        s[i] = i+1;
-        rr[i] = calloc(i+1, sizeof(int));
+        s[i] = i + 1;
+        rr[i] = calloc(i + 1, sizeof(int));
         for (j = 0; j <= i; j++) {
             if (j == 0 || j == i)
                 rr[i][j] = 1;

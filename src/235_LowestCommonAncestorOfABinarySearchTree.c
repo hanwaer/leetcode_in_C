@@ -21,7 +21,10 @@ struct TreeNode {
 };
 
 
-struct TreeNode* lowestCommonAncestor(struct TreeNode* root, struct TreeNode* p, struct TreeNode* q) {
+struct TreeNode* 
+lowestCommonAncestor(struct TreeNode* root, struct TreeNode* p, 
+                     struct TreeNode* q)
+{
     while (((root->val - p->val) * (root->val - q->val)) > 0)
         root = root->val > p->val ? root->left : root->right;
     return root;

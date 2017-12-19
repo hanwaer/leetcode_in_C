@@ -15,7 +15,7 @@
  * Return an array of size *returnSize.
  * Note: The returned array must be malloced, assume caller calls free().
  */
-int* searchRange(int* nums, int numsSize, int target, int* returnSize) {
+int* searchRange(int *nums, int numsSize, int target, int *returnSize) {
     int *ret = calloc(2, sizeof(int));
     ret[0] = -1, ret[1] = -1;
     *returnSize = 2;
@@ -24,9 +24,9 @@ int* searchRange(int* nums, int numsSize, int target, int* returnSize) {
     // left
     l = 0, r = numsSize - 1;
     while (l < r) {
-        m = (l+r)/2;
+        m = (l + r) / 2;
         if (nums[m] < target) {
-            l = m+1;
+            l = m + 1;
         } else {
             r = m;
         }
@@ -39,9 +39,9 @@ int* searchRange(int* nums, int numsSize, int target, int* returnSize) {
     // right
     r = numsSize - 1;
     while (l < r) {
-        m = (l+r)/2+1;
+        m = (l + r) / 2 + 1;
         if (nums[m] > target) {
-            r = m-1;
+            r = m - 1;
         } else {
             l = m;
         }

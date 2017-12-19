@@ -18,8 +18,8 @@
 
 #define MIN(a,b) (a) < (b) ? (a) : (b)
 int coinChange(int *coins, int coinsSize, int amount) {
-    int *minCoins = malloc((amount + 1) * sizeof(int));
     int i, j;
+    int *minCoins = malloc((amount + 1) * sizeof(int));
 
     minCoins[0] = 0;
     for (i = 1; i <= amount; i++) {

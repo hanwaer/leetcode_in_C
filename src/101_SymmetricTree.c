@@ -28,7 +28,7 @@ bool helper(struct TreeNode *left, struct TreeNode *right) {
     return helper(left->left, right->right) && helper(left->right, right->left);
 }
 
-bool isSymmetric(struct TreeNode* root) {
+bool isSymmetric(struct TreeNode *root) {
     if (!root)
         return true;
 

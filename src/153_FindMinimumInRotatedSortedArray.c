@@ -9,10 +9,10 @@
  */
 
 
-int findMin(int* nums, int numsSize) {
-    int i;
-    int min = nums[0];
+int findMin(int *nums, int numsSize) {
+    int i, min;
 
+    min = nums[0];
     for (i = 1; i < numsSize; i++) {
         if (min > nums[i])
             return nums[i];

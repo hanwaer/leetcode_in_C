@@ -15,17 +15,16 @@
  * 0.1 < 1.1 < 1.2 < 13.37
  */
 
-int compareVersion(char* version1, char* version2) {
+int compareVersion(char *version1, char *version2) {
     int ret = 0, c1, c2, i, max;
     int *r1, *r2;
-    char *n1 = NULL, *n2 = NULL;
-    char *p1 = version1, *p2 = version2;
+    char *n1 = NULL, *n2 = NULL, *p1 = version1, *p2 = version2;
 
     c1 = c2 = 1;
-    while (n1 = strchr(p1, '.')) {c1++; p1 = n1+1;}
-    while (n2 = strchr(p2, '.')) {c2++; p2 = n2+1;}
+    while (n1 = strchr(p1, '.')) {c1++; p1 = n1 + 1;}
+    while (n2 = strchr(p2, '.')) {c2++; p2 = n2 + 1;}
 
-    max = c1>c2 ? c1 : c2;
+    max = c1 > c2 ? c1 : c2;
     r1 = calloc(max, sizeof(int));
     r2 = calloc(max, sizeof(int));
 
@@ -33,18 +32,23 @@ int compareVersion(char* version1, char* version2) {
     p1 = version1;
     p2 = version2;
 
-    for (n1 = strsep(&p1, "."); n1; n1=strsep(&p1, ".")) {
+    for (n1 = strsep(&p1, "."); n1; n1 = strsep(&p1, ".")) {
         r1[c1++] = atoi(n1);
     }
 
 
-    for (n2 = strsep(&p2, "."); n2; n2=strsep(&p2, ".")) {
+    for (n2 = strsep(&p2, "."); n2; n2 = strsep(&p2, ".")) {
         r2[c2++] = atoi(n2);
     }
 
     for (i = 0; i < c1 || i < c2; i++) {
-        if (r1[i] > r2[i]) {ret = 1; break;}
-        else if (r1[i] < r2[i]) {ret = -1; break;}
+        if (r1[i] > r2[i]) {
+            ret = 1;
+            break;
+        } else if (r1[i] < r2[i]) {
+            ret = -1;
+            break;
+        }
     }
 
     free(r1);

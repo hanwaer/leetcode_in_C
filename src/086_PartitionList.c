@@ -10,15 +10,7 @@
  * return 1->2->2->4->3->5.
  */
 
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     struct ListNode *next;
- * };
- */
-
-struct ListNode* partition(struct ListNode* head, int x) {
+struct ListNode* partition(struct ListNode *head, int x) {
     struct ListNode d1, d2;
     struct ListNode *p1, *p2;
 

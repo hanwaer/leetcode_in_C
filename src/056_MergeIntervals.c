@@ -15,15 +15,16 @@ int cmp(void *a, void *b) {
  * Return an array of size *returnSize.
  * Note: The returned array must be malloced, assume caller calls free().
  */
-struct Interval* merge(struct Interval* intervals, int intervalsSize, int* returnSize) {
+struct Interval* merge(struct Interval *intervals, int intervalsSize, int *returnSize) {
     qsort(intervals, intervalsSize, sizeof(struct Interval), cmp);
     int i, j, k, min_start, max_end;
     struct Interval* result = calloc(intervalsSize, sizeof(struct Interval));
+
     k = 0;
     for (i = 0; i < intervalsSize; ) {
         min_start = intervals[i].start;
         max_end = intervals[i].end;
-        for (j = i+1; j < intervalsSize; j++) {
+        for (j = i + 1; j < intervalsSize; j++) {
             if (max_end >= intervals[j].start)
                 max_end = max_end > intervals[j].end ? max_end : intervals[j].end;
             else

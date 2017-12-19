@@ -13,20 +13,20 @@
  * Your function should return length = 2, with the first two elements of nums being 2.
  */
 
-int removeElement(int* nums, int numsSize, int val) {
+int removeElement(int *nums, int numsSize, int val) {
     int i, y;
 
-    y = numsSize-1;
+    y = numsSize - 1;
     for (i = 0; i <= y; i++) {
         while (nums[y] == val)
             y--;
 
         if (i >= y)
-            return y+1;
+            return y + 1;
             
         if (nums[i] == val) {
             nums[i] = nums[y--];
         }
     }
-    return y+1;
+    return y + 1;
 }

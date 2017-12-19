@@ -18,7 +18,7 @@
  * In this case, no transaction is done, i.e. max profit = 0.
  */
 
-int maxProfit(int* prices, int pricesSize) {
+int maxProfit(int *prices, int pricesSize) {
     int i, min = prices[0], maxpf = 0;
     for (i = 0; i < pricesSize; i++) {
         min = min < prices[i] ? min : prices[i];

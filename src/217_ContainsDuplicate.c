@@ -4,7 +4,7 @@
  * the array, and it should return false if every element is distinct.
  */
 
-bool containsDuplicate(int* nums, int numsSize) {
+bool containsDuplicate(int *nums, int numsSize) {
     int i,j;
 
     for (i = 0; i < numsSize - 1; i++) {

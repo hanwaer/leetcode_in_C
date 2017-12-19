@@ -16,9 +16,10 @@
  * You may assume both s and t have the same length.
  */
 
-bool isIsomorphic(char* s, char* t) {
+bool isIsomorphic(char *s, char *t) {
     char dict[127] = {0};
     char dict_t[127] = {0};
+
     while (*s && *t) {
         if (dict[*s]==0 && dict_t[*t]==0) {
             dict[*s] = *t;

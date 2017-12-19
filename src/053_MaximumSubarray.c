@@ -6,7 +6,7 @@
  * the contiguous subarray [4,-1,2,1] has the largest sum = 6.
  */
 
-int maxSubArray(int* nums, int numsSize) {
+int maxSubArray(int *nums, int numsSize) {
     int max, tmp_max, i;
 
     if (!nums)
@@ -15,7 +15,7 @@ int maxSubArray(int* nums, int numsSize) {
     max = nums[0];
     tmp_max = nums[0];
     for (i = 1; i < numsSize; i++) {
-        tmp_max = tmp_max+nums[i]>nums[i] ? tmp_max+nums[i] : nums[i];
+        tmp_max = (tmp_max + nums[i]) > nums[i] ? (tmp_max + nums[i]) : nums[i];
         max = max > tmp_max ? max : tmp_max;
     }
 

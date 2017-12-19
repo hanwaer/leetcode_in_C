@@ -6,16 +6,7 @@
  * identical and the nodes have the same value.
  */
 
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     struct TreeNode *left;
- *     struct TreeNode *right;
- * };
- */
-
-bool isSameTree(struct TreeNode* p, struct TreeNode* q) {
+bool isSameTree(struct TreeNode *p, struct TreeNode *q) {
     if (!p && !q)
 		return true;
     if (!p || !q)

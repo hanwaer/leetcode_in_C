@@ -16,7 +16,7 @@
  */
 
 #define MIN(a,b) a < b ? a : b
-char* minWindow(char* s, char* t) {
+char* minWindow(char *s, char *t) {
     int map[128];
     int i, j, min = 0x7fffffff, tmp_min = 0x7fffffff, total;
     char *begin, *end, *head;
@@ -34,7 +34,7 @@ char* minWindow(char* s, char* t) {
     while(*end) {
         if (map[*end++]-- > 0)
             total--;
-        while (total==0) {
+        while (total == 0) {
             if ((tmp_min = end - begin) < min) {
                 head = begin;
                 min = tmp_min;    

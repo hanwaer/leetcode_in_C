@@ -21,13 +21,15 @@ Merged tree:
 Note: The merging process must start from the root nodes of both trees.
 */
 
-struct TreeNode* mergeTrees(struct TreeNode* t1, struct TreeNode* t2) {
+struct TreeNode* mergeTrees(struct TreeNode *t1, struct TreeNode *t2) {
+    struct TreeNode *root;
     if (!t1 && !t2)
         return NULL;
-    struct TreeNode *root = malloc(sizeof(struct TreeNode));
+
+    root = malloc(sizeof(struct TreeNode));
     root->val = (t1?t1->val:0) + (t2?t2->val:0);
-    //printf("%d + %d = %d\n", t1?t1->val:0, t2?t2->val:0, root->val);
     root->left = mergeTrees(t1?t1->left:NULL, t2?t2->left:NULL);
     root->right = mergeTrees(t1?t1->right:NULL, t2?t2->right:NULL);
+
     return root;
 }
