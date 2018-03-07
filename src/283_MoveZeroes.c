@@ -12,21 +12,11 @@
 
 
 void moveZeroes(int *nums, int numsSize) {
-    int x, y, i;
-    
-    for (i = 0; i < numsSize - 1; i++) {
-        x = i;
-        y = i + 1;
-        if (nums[x] == 0) {
-            while (y < numsSize) {
-                if (nums[y] == 0) {
-                    y++;
-                } else {
-                    nums[x] = nums[y];
-                    nums[y] = 0;
-                    break;
-                }
-            }
+    int n, i;
+    for (i = 0; i < numsSize; i++) {
+        if (nums[i] && n++ != i) {
+            nums[n-1] = nums[i];
+            nums[i] = 0;
         }
     }
 }
